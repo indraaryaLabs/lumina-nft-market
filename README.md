@@ -1,16 +1,66 @@
-# React + Vite
+# Lumina — NFT Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Live Demo](https://img.shields.io/badge/Live_Demo-lumina--nft--market.vercel.app-8B5CF6?logo=vercel&logoColor=white)](https://lumina-nft-market.vercel.app)
 
-Currently, two official plugins are available:
+Landing page konsep NFT marketplace dengan ambient animated background, statistik interaktif, dan grid koleksi — dibangun dengan React 19, Tailwind CSS 4, dan Framer Motion.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Fitur
 
-## React Compiler
+- **Ambient animated background** — latar bergerak halus (`BackgroundAmbient`) yang memberi kesan immersive di seluruh halaman.
+- **Loading screen** — layar pembuka animasi sebelum konten tampil.
+- **Hero section** — headline besar dengan visual pendukung dan animasi masuk.
+- **Stats bar dengan count-up** — angka statistik (volume, koleksi, dsb.) yang berhitung naik saat terlihat, via hook `useCountUp`.
+- **Projects grid** — grid koleksi NFT dengan kartu beranimasi (Framer Motion).
+- **Navbar fixed** — navigasi tetap di atas dengan ikon brand (lucide-react + BrandIcons).
+- **Animasi terpusat** — varian animasi dikelola di `src/utils/animations.js`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+| Layer | Teknologi |
+| --- | --- |
+| UI Library | React 19 |
+| Build Tool | Vite 8 |
+| Styling | Tailwind CSS 4 (`@tailwindcss/vite`) |
+| Animasi | Framer Motion 12 |
+| Ikon | lucide-react |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Menjalankan Lokal
+
+```bash
+git clone https://github.com/indraaryaLabs/lumina-nft-market.git
+cd lumina-nft-market
+npm install
+npm run dev
+```
+
+Buka `http://localhost:5173` di browser.
+
+Perintah lain:
+
+```bash
+npm run build    # build produksi ke folder dist/
+npm run preview  # pratinjau hasil build
+npm run lint     # cek kualitas kode dengan ESLint
+```
+
+## 📁 Struktur Proyek
+
+```
+public/images/           # Aset visual (hero, grid koleksi, avatar)
+src/
+├── components/
+│   ├── BackgroundAmbient.jsx  # Latar ambient beranimasi
+│   ├── LoadingScreen.jsx      # Layar pembuka
+│   ├── Navbar.jsx             # Navigasi fixed
+│   ├── Hero.jsx               # Hero section
+│   ├── StatsBar.jsx           # Statistik dengan count-up
+│   ├── ProjectsGrid.jsx       # Grid koleksi NFT
+│   └── icons/BrandIcons.jsx   # Ikon brand kustom
+├── hooks/useCountUp.js
+├── utils/animations.js        # Varian animasi Framer Motion
+└── App.jsx                    # Komposisi halaman
+```
+
+## 📄 License
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
